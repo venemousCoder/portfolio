@@ -1,18 +1,18 @@
-/* Modern and visually appealing styles for the portfolio */
+/* Modern dark theme with vibrant accents */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
-  color: #343a40;
+  background: linear-gradient(135deg, #232526 0%, #1a1a2e 100%);
+  color: #f8f9fa;
   line-height: 1.6;
 }
 
 header {
-  background-color: #222;
+  background: linear-gradient(90deg, #0f2027 0%, #2c5364 100%);
   padding: 1.5em 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 nav ul {
@@ -28,69 +28,155 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #f8f9fa;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 nav ul li a:hover {
   color: #f0db4f;
+  border-bottom: 2px solid #f0db4f;
 }
 
 #hero {
   text-align: center;
   padding: 5em 3em;
-  background-color: #e9ecef;
-  border-bottom: 1px solid #dee2e6;
+  background: linear-gradient(120deg, #1a1a2e 60%, #16213e 100%);
+  border-bottom: 1px solid #222;
+  position: relative;
+  animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f0db4f;
+  margin-bottom: 1em;
+  box-shadow: 0 4px 16px rgba(240,219,79,0.15);
 }
 
 #hero h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
-  color: #222;
+  color: #f0db4f;
+  letter-spacing: 2px;
 }
 
 #hero p {
   font-size: 1.2em;
-  color: #555;
+  color: #f8f9fa;
+  margin-bottom: 2em;
 }
 
-#projects, #about, #contact {
+.btn-accent {
+  display: inline-block;
+  padding: 0.8em 2em;
+  background: linear-gradient(90deg, #f0db4f 0%, #ff6f61 100%);
+  color: #222;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(240,219,79,0.2);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(90deg, #ff6f61 0%, #f0db4f 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+#projects, #about, #contact, #skills {
   padding: 3em;
 }
 
 .project {
-  margin-bottom: 3em;
-  border: 1px solid #dee2e6;
-  padding: 1.5em;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #232526 60%, #2c5364 100%);
+  box-shadow: 0 4px 16px rgba(240,219,79,0.08);
+  padding: 2em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #222;
+}
+
+.project:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(240,219,79,0.18);
 }
 
 .project h3 {
-  color: #222;
+  color: #f0db4f;
   margin-bottom: 0.5em;
+}
+
+.project a {
+  display: inline-block;
+  margin-right: 1em;
+  margin-top: 0.5em;
+  color: #ff6f61;
+  background: #fff2;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.project a:hover {
+  background: #f0db4f;
+  color: #222;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  list-style: none;
+  padding: 0;
+  margin: 2em 0 0 0;
+}
+
+.skills-list li {
+  background: linear-gradient(90deg, #ff6f61 0%, #f0db4f 100%);
+  color: #222;
+  padding: 0.7em 1.5em;
+  border-radius: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(240,219,79,0.12);
+  transition: background 0.3s, color 0.3s;
+}
+
+.skills-list li i {
+  font-size: 1.3em;
 }
 
 footer {
   text-align: center;
   padding: 1.5em 0;
-  background-color: #222;
-  color: #fff;
+  background: linear-gradient(90deg, #232526 0%, #2c5364 100%);
+  color: #f0db4f;
   border-top: 1px solid #444;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
 }
 
-.skills {
-  margin-bottom: 1.5em;
-  padding: 1em;
-  border-radius: 6px;
-  background-color: #f0f0f0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -106,17 +192,15 @@ footer {
   }
 
   #hero h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
   }
 
-  #projects, #about, #contact {
-    padding: 2em;
+  #projects, #about, #contact, #skills {
+    padding: 1.5em;
   }
-  .skills {
-    margin-bottom: 1.5em;
-    padding: 1em;
-    border-radius: 6px;
-    background-color: #f0f0f0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  .skills-list {
+    gap: 0.7em;
+    font-size: 0.95em;
   }
 }
