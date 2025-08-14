@@ -13,6 +13,11 @@ header {
   background: linear-gradient(90deg, #0f2027 0%, #2c5364 100%);
   padding: 1.5em 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: padding 0.3s ease-in-out;
 }
 
 nav ul {
@@ -177,30 +182,60 @@ footer {
   box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #f0db4f;
+  font-size: 2em;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+  header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 1.2em;
+    z-index: 100;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .nav-list {
+    /* flex-direction: row;
+    align-items: self-end; */
+    grid-template-columns: auto auto auto;
+    /* grid-template-rows: auto auto; */
+    grid-gap: 50px;
+    grid-template-areas: 
+      "home projects"
+      "about contact"
+      "skills skills";
+    margin: 0;
+    padding: 4em 3em;
+    background: linear-gradient(90deg, #232526 0%, #2c5364 100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 1em;
+  }
+
+  .nav-list.nav-open {
+    display: grid;
   }
 
   nav ul li {
-    margin: 0.7em 0;
-  }
-
-  #hero {
-    padding: 3em 2em;
-  }
-
-  #hero h1 {
-    font-size: 2.2em;
-  }
-
-  #projects, #about, #contact, #skills {
-    padding: 1.5em;
-  }
-
-  .skills-list {
-    gap: 0.7em;
-    font-size: 0.95em;
+    margin: 1em 0;
   }
 }

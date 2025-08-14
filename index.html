@@ -12,16 +12,19 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#skills">Skills</a></li>
-        </ul>
-      </nav>
-    </header>
+      <button class="nav-toggle" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </nav>
+</header>
 
     <section id="hero">
       <img
@@ -30,7 +33,7 @@
         class="profile-img"
       />
       <h1>Ahmad Dalha</h1>
-      <p>Backend Developer | SSR & Microservices Enthusiast</p>
+      <p>Backend Developer | SSR | Microservices Enthusiast</p>
       <a href="#projects" class="btn-accent">View My Work</a>
     </section>
 
@@ -136,4 +139,17 @@
       <p>&copy; 2025 Ahmad Dalha. All rights reserved.</p>
     </footer>
   </body>
+  <script>
+  // Hamburger toggle logic
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const header = document.querySelector('header');
+  navToggle.addEventListener('click', () => {
+    // header.style.padding = '80px 20px';
+    navList.classList.toggle('nav-open');
+    navToggle.classList.toggle('open');
+
+  });
+</script>
 </html>
